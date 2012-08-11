@@ -1,0 +1,27 @@
+# -*- mode: shell-script -*-
+
+# escape character that doesn't seem to conflict with
+# too many emacs keybindings
+escape ^za
+
+startup_message off
+
+# disable flow control to allow ^S and ^Q characters
+defflow off
+
+# longer scrollback
+defscrollback 32768
+
+hardstatus alwayslastline "%{.gw}%-w%0{.kg}%n %t%{-}%+w %=%{..b} %H %{..r} %m/%d %C%a "
+
+# execute .bash_profile on startup
+shell -$SHELL
+
+# autodetach on hangup
+autodetach on
+
+# Startup Screens
+
+screen -t Shell 0 bash
+screen -t Emacs emacs
+select 0
