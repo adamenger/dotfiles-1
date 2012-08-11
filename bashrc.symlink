@@ -5,6 +5,11 @@ DOC=<<-EOF
    Personal aliases and functions belong here.
 EOF
 
+echo "running bashrc"
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # enable color support of ls and also add handy aliases
 if [ "$TERM" != "dumb" ]; then
     alias rm='rm -i'
@@ -43,8 +48,9 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+    echo "Loading virtualenv from: /usr/local/bin/virtualenvwrapper.sh"
     source /usr/local/bin/virtualenvwrapper.sh
 elif [ -e /usr/local/share/python/virtualenvwrapper.sh ]; then
+    echo "Loading virtualenv from: /usr/local/share/python/virtualenvwrapper.sh"
     source /usr/local/share/python/virtualenvwrapper.sh
 fi
-

@@ -1,20 +1,12 @@
 # ~/.bash_profile: executed by bash(1) for login shells.
-
 DOC=<<-EOF
-    Environment variables and startup programs belong here.    
+    Environment variables and startup programs belong here.
 EOF
 
+echo "running bash_profile"
 
 # the default umask
 #umask 022
-
-# include .bashrc if it exists
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
-
-# If not running interactively, don't do anything
-[ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -66,3 +58,8 @@ fi
 
 export OPSCODE_USER="steder"
 
+# NOTE: we want to load bashrc last!
+# include .bashrc if it exists
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi

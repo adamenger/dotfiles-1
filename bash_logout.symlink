@@ -3,3 +3,5 @@
 DOC=<<-EOF
     Do anything you want / need to do on logout.
 EOF
+
+echo "running bash_logout"
