@@ -1,0 +1,30 @@
+[user]
+    name = Mike Steder
+    email = steder@gmail.com
+    signingkey = 04C002A2
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+
+[rerere]
+    enabled = 1
+
+[alias]
+    ci = commit -a
+    co = checkout
+    df = diff
+    lg = log
+    lp = log -p
+    st = status
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    push-branch-github = push -u origin
+    delete-branch-github = push origin --delete
+    alias = config --get-regexp 'alias.*'
+
+[github]
+    user = steder
