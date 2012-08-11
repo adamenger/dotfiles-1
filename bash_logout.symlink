@@ -1,0 +1,5 @@
+# ~/.bash_logout: executed by bash(1) for login shells when you logout
+
+DOC=<<-EOF
+    Do anything you want / need to do on logout.
+EOF

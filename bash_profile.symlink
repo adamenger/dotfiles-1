@@ -1,0 +1,68 @@
+# ~/.bash_profile: executed by bash(1) for login shells.
+
+DOC=<<-EOF
+    Environment variables and startup programs belong here.    
+EOF
+
+
+# the default umask
+#umask 022
+
+# include .bashrc if it exists
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+export HISTCONTROL=ignoredups
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
+    ;;
+*)
+    ;;
+esac
+
+export SVN_EDITOR=emacs
+export EDITOR=emacs
+
+# set PATH so it includes user's private bin if it exists
+if [ -d ~/bin ] ; then
+    PATH=~/bin:"${PATH}"
+fi
+
+BREWPATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python"
+export PATH="${BREWPATH}:${PATH}"
+
+# VirtualEnv:
+export WORKON_HOME=$HOME/.virtualenvs
+
+if [ -e ~/.rs_cloud ]; then
+    echo "loading credentials from ~/.rs_cloud"
+    . ~/.rs_cloud
+fi
+
+if [ -e ~/.rackspace ]; then
+    echo "loading credentials from ~/.rackspace"
+    . ~/.rackspace
+fi
+
+if [ -e ~/.aws ]; then
+    echo "loading credentials from ~/.aws"
+    . ~/.aws
+fi
+
+export OPSCODE_USER="steder"
+

@@ -1,0 +1,50 @@
+#-*- mode: sh -*-
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+DOC=<<-EOF
+   Personal aliases and functions belong here.
+EOF
+
+# enable color support of ls and also add handy aliases
+if [ "$TERM" != "dumb" ]; then
+    alias rm='rm -i'
+    alias mv='mv -i'
+    alias cp='cp -i'
+fi
+
+platform=`uname -s`
+
+if [ "$platform" = "Darwin" ]; then
+   alias ls='ls -GF'
+fi
+
+# some more ls aliases
+alias ll='ls -Gl'
+alias la='ls -GA'
+alias l='ls -GCF'
+
+alias findinpy="find . -name '*.py' | xargs egrep "
+alias svnflakes="svn status | grep '^\M\|^A' | cut -c 8- | xargs pyflakes | uniq"
+alias ducks='du -cks * |sort -rn |head -11'
+alias nox='emacs -nw'
+alias log='svn log --stop-on-copy'
+alias uplog='svn up; svn log --stop-on-copy'
+alias status='svn st | grep -Ev "?*resources"'
+alias conflicts='svn st | grep "^[ ]*C"'
+alias whichpkg='dpkg -S'
+alias tun="ssh -f -N "
+complete -F _ssh tun
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+elif [ -e /usr/local/share/python/virtualenvwrapper.sh ]; then
+    source /usr/local/share/python/virtualenvwrapper.sh
+fi
+
