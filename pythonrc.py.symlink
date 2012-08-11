@@ -1,3 +1,4 @@
+#-*- mode: python -*-
 """
 Adds readline support to the standard interpreter when you type::
 

@@ -1,3 +1,5 @@
+(require 'cl)
+
 (add-to-list 'load-path "~/etc/emacs.d/personal")
 
 ;; Keep backups in a central location: 
@@ -26,7 +28,13 @@
 (load custom-file 'noerror)
 
 ;; Load any dependencies here:
-(load "packages")
+(require 'packages)
+
+(defvar mswindows-p (string-match "windows" (symbol-name system-type)))
+(defvar macosx-p (string-match "darwin" (symbol-name system-type)))
+(defvar linux-p (string-match "linux" (symbol-name system-type)))
 
 ;; Load up all our personal stuff:
-(load "~/etc/emacs.d/personal/ms-bindings.el")
+(load "~/etc/emacs.d/personal/ms-appearance.el") 
+(load "~/etc/emacs.d/personal/ms-bindings.el") 
+
