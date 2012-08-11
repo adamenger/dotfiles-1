@@ -1,0 +1,12 @@
+;-*- mode: emacs-lisp -*-
+;; Mike Steder <steder@gmail.com>
+(add-to-list 'load-path "~/etc/emacs.d")
+
+;; Load our real configuration:
+(load "init")
+
+;; Enable backtrace when problems occur
+;;(setq debug-on-error t)
+
+;; Ask how long emacs took to load
+;;(message "My emacs loaded in %ss" (emacs-init-time))
