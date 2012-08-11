@@ -1,3 +1,9 @@
-# python stuff
+# Python 
 *.pyc
 *.pyo
+
+# Emacs 
+*~
+
+# Mac OS X
+.DS_Store
