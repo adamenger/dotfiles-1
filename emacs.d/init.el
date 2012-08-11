@@ -1,6 +1,9 @@
 (require 'cl)
 
 (add-to-list 'load-path "~/etc/emacs.d/personal")
+(add-to-list 'load-path "~/etc/emacs.d/thirdparty")
+
+(setq config-directory (expand-file-name "~/etc/emacs.d/"))
 
 ;; Keep backups in a central location: 
 (defvar backup-dir "~/etc/.emacs.d/backups")
@@ -28,7 +31,8 @@
 (load custom-file 'noerror)
 
 ;; Load any dependencies here:
-(require 'packages)
+;;(require 'packages)
+(load "packages")
 
 (defvar mswindows-p (string-match "windows" (symbol-name system-type)))
 (defvar macosx-p (string-match "darwin" (symbol-name system-type)))

@@ -130,6 +130,9 @@
 ;;  :height 0.7)
 ;;
 
+(if (not window-system)
+    (defvar mouse-wheel-mode nil "tabbar checks for this to see if we can switch tabs with the mouse wheel")
+)
 (tabbar-mode)
 (global-set-key [(control f10)] 'tabbar-local-mode)
 (global-set-key [(control shift tab)] 'tabbar-backward)
@@ -137,7 +140,7 @@
 
 ;;; COLOR THEMES
 (require 'color-theme)
-(require 'color-theme-tango)
+;(require 'color-theme-tango)
 (require 'zenburn)
 ; Solorized
 (require 'color-theme-solarized)
@@ -145,11 +148,12 @@
 ; (color-theme-comidia)
 (if window-system
     (progn
-      (color-theme-initialize) ; If gui window, load this theme
-      ( color-theme-tango ))
+      ;(color-theme-initialize) ; If gui window, load this theme
+      (load-theme 'wombat)
+      )
   (progn
-    (color-theme-initialize)
-    (color-theme-euphoria); If terminal, load this theme
+    ;(color-theme-initialize)
+    (load-theme 'wombat) ; If terminal, load this theme
    )
   )
 
@@ -200,6 +204,7 @@
 ))
 
 ;; Mark Column 80 as an aid to help keep lines un 80 chars:
+; TODO: add this to thirdparty?
 (require 'column-marker)
 ;; marker 1 is gray, marker 2 is light blue, marker 3 is red/pink,
 ;; enable just for python mode:
