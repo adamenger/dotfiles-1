@@ -19,7 +19,7 @@
 ;; instead of "msteder@Emacs" it'll show PWD, buffer, and filename
 ;(setq frame-title-format `("%F in: " default-directory " %b (%f) "))
 (defun ms-frame-title-format ()
-  (concat " %b@" (format "%s" (msproject-project-root)) ""))
+  (concat " %b@" (format "%s" (ms-project-project-root)) ""))
 
 (if window-system
     (setq frame-title-format '(:eval (ms-frame-title-format)))
@@ -138,22 +138,14 @@
 (global-set-key [(control shift tab)] 'tabbar-backward)
 (global-set-key [(control tab)]       'tabbar-forward)
 
-;;; COLOR THEMES
-(require 'color-theme)
-;(require 'color-theme-tango)
-(require 'zenburn)
-; Solorized
-(require 'color-theme-solarized)
-
-; (color-theme-comidia)
 (if window-system
     (progn
-      ;(color-theme-initialize) ; If gui window, load this theme
-      (load-theme 'wombat)
+      ; If gui window, load this theme
+      (load-theme 'tango)
       )
   (progn
-    ;(color-theme-initialize)
-    (load-theme 'wombat) ; If terminal, load this theme
+    ; If terminal, load this theme
+    (load-theme 'tango-dark)
    )
   )
 
@@ -226,3 +218,4 @@
     (global-rainbow-delimiters-mode)
   )
 
+(load "ms-uniquify-buffers.el")

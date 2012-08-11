@@ -11,7 +11,7 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
 ;; adding Milkypostman’s Experimental Lisp Package Repository:
-(add-to-list 'package-archives 
+(add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/"))
 
 (package-initialize)
@@ -20,16 +20,14 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(color-theme
-    ;color-theme-tango
-    zenburn
-    color-theme-solarized
+  '(;autopair
+    mustache-mode
     rainbow-delimiters
     rainbow-mode
-    tabbar)
+    tabbar
+    yasnippet)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p required-packages)
   (when (not (package-installed-p p))
     (package-install p)))
-
