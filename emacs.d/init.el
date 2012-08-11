@@ -29,7 +29,4 @@
 (load "packages")
 
 ;; Load up all our personal stuff:
-
-
-
-;(load "~/etc/emacs.d/personal/example.el")
+(load "~/etc/emacs.d/personal/ms-bindings.el")
