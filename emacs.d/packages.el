@@ -21,6 +21,8 @@
 
 (defvar required-packages
   '(;autopair
+    flymake-cursor
+    markdown-mode
     mustache-mode
     rainbow-delimiters
     rainbow-mode

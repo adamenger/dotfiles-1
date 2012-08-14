@@ -1,3 +1,4 @@
+<!--- -*- mode: markdown -*- -->
 # Steder's Dotfiles
 
 My dotfiles containing configuration for:
@@ -9,13 +10,13 @@ My dotfiles containing configuration for:
  * irb
  * mercurial
  * screen
- * vimrc 
+ * vimrc
 
 # Installation
 
 To install these dotfiles all you should have to do is:
 
-    $ git clone git@github.com:steder/dotfiles.git 
+    $ git clone git@github.com:steder/dotfiles.git
     $ ./etc/setup.sh
 
 Then start a new shell and you should be ready to go.
@@ -32,8 +33,8 @@ Just a quick note on the files used by bash to remind me what I should be includ
  *  `.bashrc`: read and executed by Bash every time you start a subshell
  * `.bash_logout`: read and executed by Bash every time a login shell exits
 
-`.bash_profile` is read and executed only when you start a login shell (that is, when you log in to the system). If you start a subshell (a new shell) by typing bash at the command prompt, it will read commands from .bashrc. This allows you to separate commands needed at login from those needed when invoking a subshell. 
- 
+`.bash_profile` is read and executed only when you start a login shell (that is, when you log in to the system). If you start a subshell (a new shell) by typing bash at the command prompt, it will read commands from .bashrc. This allows you to separate commands needed at login from those needed when invoking a subshell.
+
 ### What about .profile or .bash_login?
 
 Bash allows 2 synonyms for `.bash_profile`: `.bash_login` and `.profile.`
@@ -49,10 +50,10 @@ Personal aliases and functions should go into `~/.bashrc`.
 
 ## Emacs (And Aquamacs)
 
-After 10 years of nearly daily use I've really come to love Emacs and with this latest refactoring I'm 
+After 10 years of nearly daily use I've really come to love Emacs and with this latest refactoring I'm
 really happy with how my configuration works.
 
-I've gone to some trouble to have my Emacs configuration work smoothly in both commandline emacs on Linux, Mac OS X, and Windows.  
+I've gone to some trouble to have my Emacs configuration work smoothly in both commandline emacs on Linux, Mac OS X, and Windows.
 My configuration should also run cleanly in Aquamacs.
 
 I've also recently updated to Emacs 24.1 (and Aquamacs 3.x).
@@ -71,7 +72,7 @@ The layout is:
 
     emacs.symlink # our .emacs file
     emacs.d/
-    |- auto-save-list # 
+    |- auto-save-list #
     |- backups # ~ files
     |- elpa # stores all packages downloaded by elpa
     |- personal # our personal emacs files
@@ -102,11 +103,10 @@ I have a crapload of Python customizations.
 ### Starcraft Actions Per Minute
 
 I recently decided I wanted to write an emacs minor mode to see what was involved.  I ended up with a mode
-that keeps track of every key press and calculates actions per minute like they do for professional starcraft 
+that keeps track of every key press and calculates actions per minute like they do for professional starcraft
 matches.
 
 I had vague ideas when I wrote this about extending it to track other metrics.  For example:
  * it would be possible to generate a heatmap of most used keys.
  * You could identify the top 10 keyboard shortcuts used so you can remap them
    to make them require fewer keystrokes or to require less reach.
- 
