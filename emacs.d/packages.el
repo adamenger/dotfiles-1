@@ -22,11 +22,13 @@
 (defvar required-packages
   '(;autopair
     flymake-cursor
+    gist
     markdown-mode
     mustache-mode
     rainbow-delimiters
     rainbow-mode
     tabbar
+    yaml-mode
     yasnippet)
   "A list of packages to ensure are installed at launch.")
 
