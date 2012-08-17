@@ -1,0 +1,4 @@
+# python requirements for emacs and rope:
+rope
+ropemode
+ropemacs
