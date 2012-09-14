@@ -54,7 +54,14 @@ echo "Grabbing git submodules..."
 git submodule init
 git submodule update
 
+echo "You should be setup! :-)"
+echo ""
 echo "You may want to install python dependencies next:"
 echo "  pip install -r requirements.txt"
-echo "Otherwise..."
-echo "You should be setup! :-)"
+echo ""
+echo "Pymacs is a bit more of a hassle..."
+echo "  cd emacs.d/thirdparty/Pymacs"
+echo "  make"
+echo "  cp Pymacs.py /usr/local/lib/pythonX.Y/site-packages"
+echo "  or"
+echo "  cp Pymacs.py /usr/local/lib/pythonX.Y/dist-packages"
