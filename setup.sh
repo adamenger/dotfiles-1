@@ -1,11 +1,11 @@
 #!/bin/bash
 
 ABOUT=<<-EOF
-  This script 'installs' dotfiles by creating symbolic links in ~/ to each of setup.sh's 
+  This script 'installs' dotfiles by creating symbolic links in ~/ to each of setup.sh's
   sibling files that ends with a '.symlink' extension.
 
   Usage:
-    
+
     $ ./setup.sh
 
   Tested on Linux and Mac OS X.
@@ -46,6 +46,15 @@ if [ $found -eq 0 ]
 then
     echo "You don't have any *.symlink files. :-("
 else
-    echo "You should be setup! :-)"
+    echo "Symlinks should be setup! :-)"
 fi
 
+echo "Grabbing git submodules..."
+
+git submodule init
+git submodule update
+
+echo "You may want to install python dependencies next:"
+echo "  pip install -r requirements.txt"
+echo "Otherwise..."
+echo "You should be setup! :-)"
