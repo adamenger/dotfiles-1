@@ -27,5 +27,5 @@
 ;; $ make && python setup.py install
 (add-to-list 'load-path "~/etc/emacs.d/thirdparty/Pymacs")
 (require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
-(setq ropemacs-enable-autoimport t)
+;(pymacs-load "ropemacs" "rope-")
+;(setq ropemacs-enable-autoimport t)
