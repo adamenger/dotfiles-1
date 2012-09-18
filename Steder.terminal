@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CursorBlink</key>
+	<true/>
+	<key>EscapeNonASCIICharacters</key>
+	<true/>
+	<key>Font</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
+	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QViRjbGFzc1ZOU05hbWVWTlNTaXplWE5TZkZs
+	YWdzgAOAAiNAMgAAAAAAABAQXxAaSW5jb25zb2xhdGEtZHpGb3JQb3dlcmxpbmXSExQV
+	FlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIVF1hOU09iamVjdF8QD05TS2V5ZWRB
+	cmNoaXZlctEaG1Ryb290gAEIERojLTI3PEJLUllgaWttdniVmqWutbjB09bbAAAAAAAA
+	AQEAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAN0=
+	</data>
+	<key>FontAntialias</key>
+	<true/>
+	<key>FontWidthSpacing</key>
+	<real>1.004032258064516</real>
+	<key>Linewrap</key>
+	<true/>
+	<key>ProfileCurrentVersion</key>
+	<real>2.02</real>
+	<key>TerminalType</key>
+	<string>xterm-256color</string>
+	<key>UseBrightBold</key>
+	<true/>
+	<key>name</key>
+	<string>Steder</string>
+	<key>shellExitAction</key>
+	<integer>1</integer>
+	<key>type</key>
+	<string>Window Settings</string>
+	<key>useOptionAsMetaKey</key>
+	<true/>
+</dict>
+</plist>

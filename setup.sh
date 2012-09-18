@@ -54,6 +54,13 @@ echo "Grabbing git submodules..."
 git submodule init
 git submodule update
 
+OS=`uname -s`
+
+if [ "$OS" == "Darwin" ]; then
+    echo 'Setting up OS X...'
+    source osx.sh
+fi
+
 echo "You should be setup! :-)"
 echo ""
 echo "You may want to install python dependencies next:"

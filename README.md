@@ -110,3 +110,17 @@ I had vague ideas when I wrote this about extending it to track other metrics.  
  * it would be possible to generate a heatmap of most used keys.
  * You could identify the top 10 keyboard shortcuts used so you can remap them
    to make them require fewer keystrokes or to require less reach.
+
+## OSX Configuration
+
+I've recently added some basic OSX customizations and `powerline` bash
+prompt customizations.  To make all that work smoothly I've included a
+configuration file (`~/etc/osx.sh`) that will configure the terminal
+using the included template.  If nothing else the template can be used
+to reconfigure the terminal on other machines to work properly.  For
+example, `powerline` requires the `Terminal.app` option 'Escape
+Non-ASCII characters'.
+
+There are quite a few examples in that config file of other OSX
+customizations that can be performed largely through calls to the
+`defaults` command.
