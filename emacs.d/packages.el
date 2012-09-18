@@ -23,6 +23,7 @@
   '(;autopair
     flymake-cursor
     gist
+    go-mode
     markdown-mode
     mustache-mode
     rainbow-delimiters
