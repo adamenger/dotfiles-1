@@ -35,7 +35,7 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-BREWPATH="/usr/local/bin:/usr/local/sbin:/usr/local/share/python"
+BREWPATH="/usr/local/share/python:/usr/local/bin:/usr/local/sbin"
 export PATH="${BREWPATH}:${PATH}"
 
 # VirtualEnv:
