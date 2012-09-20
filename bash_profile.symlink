@@ -35,7 +35,9 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-BREWPATH="/usr/local/share/python:/usr/local/bin:/usr/local/sbin"
+BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
+BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
+
 export PATH="${BREWPATH}:${PATH}"
 
 # VirtualEnv:

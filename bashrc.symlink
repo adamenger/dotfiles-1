@@ -54,3 +54,10 @@ elif [ -e /usr/local/share/python/virtualenvwrapper.sh ]; then
     echo "Loading virtualenv from: /usr/local/share/python/virtualenvwrapper.sh"
     source /usr/local/share/python/virtualenvwrapper.sh
 fi
+
+# Powerline (see dotfiles/powerline-bash/README.md)
+function _powerline_ps1()
+{
+       export PS1="$(~/etc/powerline-bash/powerline-bash.py $?)"
+}
+export PROMPT_COMMAND="_powerline_ps1"
