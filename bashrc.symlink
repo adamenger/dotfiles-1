@@ -47,6 +47,10 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+fi
+
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     echo "Loading virtualenv from: /usr/local/bin/virtualenvwrapper.sh"
     source /usr/local/bin/virtualenvwrapper.sh

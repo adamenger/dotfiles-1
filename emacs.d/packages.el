@@ -21,6 +21,7 @@
 
 (defvar required-packages
   '(;autopair
+    cyberpunk-theme
     flymake-cursor
     gist
     go-mode

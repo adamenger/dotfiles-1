@@ -141,11 +141,11 @@
 (if window-system
     (progn
       ; If gui window, load this theme
-      (load-theme 'tango)
+      (load-theme 'cyberpunk)
       )
   (progn
     ; If terminal, load this theme
-    (load-theme 'tango-dark)
+    (load-theme 'cyberpunk)
    )
   )
 
