@@ -8,6 +8,8 @@
 ;; haskell-simple-indent
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
 
 ;; ghc mode installs a bunch of useful stuff for haskell
 ;; to support syntax highlighting and flymake

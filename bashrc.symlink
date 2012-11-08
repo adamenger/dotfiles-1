@@ -65,3 +65,6 @@ function _powerline_ps1()
        export PS1="$(~/etc/powerline-bash/powerline-bash.py $?)"
 }
 export PROMPT_COMMAND="_powerline_ps1"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

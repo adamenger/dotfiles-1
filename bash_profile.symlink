@@ -6,6 +6,8 @@ EOF
 
 echo "running bash_profile"
 
+platform=`uname -s`
+
 # the default umask
 #umask 022
 
@@ -39,7 +41,21 @@ fi
 BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
 BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
 
+# GO:
+if [ "$platform" = "Darwin" ]; then
+    export GOROOT=/usr/local/go
+    export GOPATH="$HOME/Projects/Go"
+    export PATH="$PATH:$GOROOT/bin"
+else
+    export GOROOT=/usr/local/go
+    export GOPATH="$HOME/Projects/Go"
+    export PATH="$PATH:$GOROOT/bin"
+fi
+
 export PATH="${BREWPATH}:${PATH}"
+
+# Haskell
+export PATH="$PATH:$HOME/.cabal/bin"
 
 # VirtualEnv:
 export WORKON_HOME=$HOME/.virtualenvs

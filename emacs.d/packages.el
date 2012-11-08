@@ -23,12 +23,17 @@
   '(;autopair
     cyberpunk-theme
     flymake-cursor
+    ghc
+    ghci-completion
     gist
     go-mode
+    haskell-mode
+    jade-mode
     markdown-mode
     mustache-mode
     rainbow-delimiters
     rainbow-mode
+    stylus-mode
     tabbar
     yaml-mode
     yasnippet)

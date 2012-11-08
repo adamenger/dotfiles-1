@@ -26,3 +26,6 @@
     delete-branch-github = push origin --delete
     alias = config --get-regexp 'alias.*'
 
+[github]
+	user = steder
+	oauth-token = b9cdeef9aa602e217d1a94ac9a267a5063c56db3
