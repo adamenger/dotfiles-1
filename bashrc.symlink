@@ -40,6 +40,18 @@ alias whichpkg='dpkg -S'
 alias tun="ssh -f -N "
 complete -F _ssh tun
 
+# Functions to set titles in iterm2:
+# $1 = type; 0 - both, 1 - tab, 2 - title
+# rest = text
+setTerminalText () {
+    # echo works in bash & zsh
+    local mode=$1 ; shift
+    echo -ne "\033]$mode;$@\007"
+}
+set_both_titles  () { setTerminalText 0 $@; }
+set_tab_title   () { setTerminalText 1 $@; }
+set_window_title () { setTerminalText 2 $@; }
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
