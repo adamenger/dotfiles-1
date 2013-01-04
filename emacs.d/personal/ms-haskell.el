@@ -15,5 +15,5 @@
 ;; to support syntax highlighting and flymake
 ;; you may need to install 'ghc-mod' i.e.:
 ;; cabal install ghc-mod
-(autoload 'ghc-init "ghc" nil t)
-(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
+;(autoload 'ghc-init "ghc" nil t)
+;(add-hook 'haskell-mode-hook (lambda () (ghc-init)))
