@@ -6,6 +6,8 @@ import subprocess
 import sys
 import re
 
+DIAMOND=u"\u25C8"
+
 class Powerline:
     symbols = {
         'compatible': {
@@ -64,6 +66,7 @@ class Segment:
             self.powerline.fgcolor(self.separator_fg),
             self.separator))
 
+
 def add_cwd_segment(powerline, cwd, maxdepth):
     #powerline.append(' \\w ', 15, 237)
     home = os.getenv('HOME')
@@ -83,9 +86,11 @@ def add_cwd_segment(powerline, cwd, maxdepth):
         powerline.append(Segment(powerline, ' %s ' % n, 250, 237, powerline.separator_thin, 244))
     powerline.append(Segment(powerline, ' %s ' % names[-1], 254, 237))
 
+
 def is_hg_clean():
     output = os.popen("hg status 2> /dev/null | grep '^?' | tail -n1").read()
     return len(output) == 0
+
 
 def add_hg_segment(powerline, cwd):
     green = 148
@@ -100,6 +105,7 @@ def add_hg_segment(powerline, cwd):
         fg = 0
     powerline.append(Segment(powerline, ' %s ' % branch, fg, bg))
     return True
+
 
 def get_git_status():
     has_pending_commits = True
@@ -120,6 +126,7 @@ def get_git_status():
         if line.find('Untracked files') >= 0:
             has_untracked_files = True
     return has_pending_commits, has_untracked_files, origin_position
+
 
 def add_git_segment(powerline, cwd):
     green = 148
@@ -142,6 +149,7 @@ def add_git_segment(powerline, cwd):
         fg = 15
     powerline.append(Segment(powerline, ' %s ' % branch, fg, bg))
     return True
+
 
 def add_svn_segment(powerline, cwd):
     if not os.path.exists(os.path.join(cwd,'.svn')):
@@ -175,6 +183,7 @@ def add_svn_segment(powerline, cwd):
         return False
     return True
 
+
 def add_repo_segment(powerline, cwd):
     for add_repo_segment in [add_git_segment, add_svn_segment, add_hg_segment]:
         try:
@@ -184,6 +193,7 @@ def add_repo_segment(powerline, cwd):
         except OSError:
             pass
 
+
 def add_virtual_env_segment(powerline, cwd):
     env = os.getenv("VIRTUAL_ENV")
     if env == None:
@@ -191,7 +201,18 @@ def add_virtual_env_segment(powerline, cwd):
     env_name = os.path.basename(env)
     bg = 35
     fg = 22
-    powerline.append(Segment(powerline,' %s ' % env_name, fg, bg))
+    powerline.append(Segment(powerline,' %s ' % env_name, fg, bg, separator=DIAMOND))
+    return True
+
+
+def add_rvm_env_segment(powerline, cwd):
+    try:
+        env = subprocess.check_output("rvm-prompt").strip()
+    except subprocess.CalledProcessError:
+        return False
+    bg = 35
+    fg = 22
+    powerline.append(Segment(powerline,' %s ' % env, fg, bg))
     return True
 
 
@@ -203,10 +224,12 @@ def add_root_indicator(powerline, error):
         bg = 161
     powerline.append(Segment(powerline, ' \\$ ', fg, bg))
 
+
 if __name__ == '__main__':
     p = Powerline(mode='patched')
     cwd = os.getcwd()
     add_virtual_env_segment(p, cwd)
+    add_rvm_env_segment(p, cwd)
     #p.append(Segment(powerline, ' \\u ', 250, 240))
     #p.append(Segment(powerline, ' \\h ', 250, 238))
     add_cwd_segment(p, cwd, 5)
