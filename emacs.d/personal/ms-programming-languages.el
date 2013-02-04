@@ -37,4 +37,7 @@
   )
 
 ;;
-(add-hook 'find-file-hook 'flymake-find-file-hook)
+;; Disabling this for now and trying flycheck
+;;(add-hook 'find-file-hook 'flymake-find-file-hook)
+
+(add-hook 'python-mode-hook 'flycheck-mode)

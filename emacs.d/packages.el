@@ -23,10 +23,12 @@
   '(;autopair
     cyberpunk-theme
     flymake-cursor
+    flycheck
     ghc
     ghci-completion
     gist
     go-mode
+    haml-mode
     haskell-mode
     jade-mode
     markdown-mode
