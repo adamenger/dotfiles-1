@@ -210,6 +210,10 @@ def add_rvm_env_segment(powerline, cwd):
         env = subprocess.check_output("rvm-prompt").strip()
     except subprocess.CalledProcessError:
         return False
+    except OSError:
+        # we were unable to find rvm-prompt on the commandline
+        # so let's ignore this segment:
+        return False
     bg = 35
     fg = 22
     powerline.append(Segment(powerline,' %s ' % env, fg, bg))
