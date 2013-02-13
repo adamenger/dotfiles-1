@@ -29,3 +29,5 @@
 [github]
 	user = steder
 	oauth-token = e62ed7098b7d3c481184fd63824c13e623386a1c
+[push]
+	default = matching

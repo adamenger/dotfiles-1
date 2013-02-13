@@ -5,8 +5,6 @@ DOC=<<-EOF
    Personal aliases and functions belong here.
 EOF
 
-echo "running bashrc"
-
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -64,10 +62,8 @@ if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
 fi
 
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    echo "Loading virtualenv from: /usr/local/bin/virtualenvwrapper.sh"
     source /usr/local/bin/virtualenvwrapper.sh
 elif [ -e /usr/local/share/python/virtualenvwrapper.sh ]; then
-    echo "Loading virtualenv from: /usr/local/share/python/virtualenvwrapper.sh"
     source /usr/local/share/python/virtualenvwrapper.sh
 fi
 
