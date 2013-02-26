@@ -38,8 +38,8 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
-BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
+#BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
+#BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
 
 # GO:
 if [ "$platform" = "Darwin" ]; then
