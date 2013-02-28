@@ -33,6 +33,7 @@
     jade-mode
     markdown-mode
     mustache-mode
+    projectile
     rainbow-delimiters
     rainbow-mode
     stylus-mode
