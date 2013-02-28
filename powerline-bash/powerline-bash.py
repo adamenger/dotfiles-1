@@ -214,6 +214,8 @@ def add_rvm_env_segment(powerline, cwd):
         # we were unable to find rvm-prompt on the commandline
         # so let's ignore this segment:
         return False
+    except:
+        return False
     bg = 35
     fg = 22
     powerline.append(Segment(powerline,' %s ' % env, fg, bg))

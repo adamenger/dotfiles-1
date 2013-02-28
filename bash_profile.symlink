@@ -38,8 +38,11 @@ if [ -d ~/bin ] ; then
     PATH=~/bin:"${PATH}"
 fi
 
-BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
-BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
+if [ -d /usr/local/Cellar ]; then
+    BREW_RUBY_PATH="/usr/local/Cellar/ruby/$(ls -rt /usr/local/Cellar/ruby/ | head)/bin"
+    BREWPATH="/usr/local/share/python:$BREW_RUBY_PATH:/usr/local/bin:/usr/local/sbin"
+    export PATH="${BREWPATH}:${PATH}"
+fi
 
 # GO:
 if [ "$platform" = "Darwin" ]; then
@@ -51,8 +54,6 @@ else
     export GOPATH="$HOME/Projects/Go"
     export PATH="$PATH:$GOROOT/bin"
 fi
-
-export PATH="${BREWPATH}:${PATH}"
 
 # Haskell
 export PATH="$PATH:$HOME/.cabal/bin"
