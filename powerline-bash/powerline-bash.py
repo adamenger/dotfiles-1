@@ -1,12 +1,15 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
+
 
 import os
 import subprocess
 import sys
 import re
 
+
 DIAMOND=u"\u25C8"
+
 
 class Powerline:
     symbols = {
@@ -40,8 +43,13 @@ class Powerline:
         self.segments.append(segment)
 
     def draw(self):
-        return (''.join((s[0].draw(s[1]) for s in zip(self.segments, self.segments[1:]+[None])))
-            + self.reset).encode('utf-8')
+        stuff = (''.join((s[0].draw(s[1]) for s in zip(self.segments, self.segments[1:]+[None])))
+                    + self.reset)
+        if sys.hexversion > 0x03000000:
+            return stuff
+        else:
+            return stuff.encode('utf-8')
+
 
 class Segment:
     def __init__(self, powerline, content, fg, bg, separator=None, separator_fg=None):
@@ -111,7 +119,7 @@ def get_git_status():
     has_pending_commits = True
     has_untracked_files = False
     origin_position = ""
-    output = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE).communicate()[0]
+    output = subprocess.Popen(['git', 'status'], stdout=subprocess.PIPE).communicate()[0].decode('utf-8')
     for line in output.split('\n'):
         origin_status = re.findall("Your branch is (ahead|behind).*?(\d+) comm", line)
         if len(origin_status) > 0:
@@ -207,7 +215,7 @@ def add_virtual_env_segment(powerline, cwd):
 
 def add_rvm_env_segment(powerline, cwd):
     try:
-        env = subprocess.check_output("rvm-prompt").strip()
+        env = subprocess.check_output("rvm-prompt").decode('utf-8').strip()
     except subprocess.CalledProcessError:
         return False
     except OSError:
@@ -242,5 +250,3 @@ if __name__ == '__main__':
     add_repo_segment(p, cwd)
     add_root_indicator(p, sys.argv[1] if len(sys.argv) > 1 else 0)
     sys.stdout.write(p.draw())
-
-# vim: set expandtab:
