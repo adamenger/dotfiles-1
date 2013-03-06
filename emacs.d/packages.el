@@ -27,6 +27,7 @@
     ghc
     ghci-completion
     gist
+    git-gutter
     go-mode
     haml-mode
     haskell-mode
