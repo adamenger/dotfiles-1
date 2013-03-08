@@ -141,7 +141,7 @@
 (if window-system
     (progn
       ; If gui window, load this theme
-      (load-theme 'cyberpunk)
+      (load-theme 'tango)
       )
   (progn
     ; If terminal, load this theme

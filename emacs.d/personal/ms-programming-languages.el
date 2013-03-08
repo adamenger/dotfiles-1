@@ -16,6 +16,7 @@
 (eval-after-load 'flymake '(require 'flymake-cursor))
 
 (when (load "flymake" t)
+
   (defun flymake-pyflakes-init ()
     (let* ((temp-file (flymake-init-create-temp-buffer-copy
                        ;'flymake-create-temp-inplace))
@@ -41,3 +42,16 @@
 ;;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
 (add-hook 'python-mode-hook 'flycheck-mode)
+
+;; automatically pair braces, parens, quotes, etc:
+(autopair-global-mode)
+
+;; display git diff icons in the fringe:
+(global-git-gutter-mode t)
+
+;; enable basic code folding with hs (hide show mode) in
+;; all modes:
+;(define-globalized-minor-mode global-hs-minor-mode
+;    hs-minor-mode hs-minor-mode)
+;(global-hs-minor-mode 1)
+;; Nevermind, this global mode hack causes problems.

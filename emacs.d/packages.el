@@ -20,13 +20,18 @@
   (package-refresh-contents))
 
 (defvar required-packages
-  '(;autopair
+  '(autopair
     cyberpunk-theme
+    elnode
     flymake-cursor
     flycheck
     ghc
     ghci-completion
     gist
+    git-gutter
+    git-commit-mode
+    gitconfig-mode
+    gitignore-mode
     go-mode
     haml-mode
     haskell-mode
@@ -36,6 +41,8 @@
     projectile
     rainbow-delimiters
     rainbow-mode
+    solarized-theme
+    tango-2-theme
     stylus-mode
     tabbar
     yaml-mode
