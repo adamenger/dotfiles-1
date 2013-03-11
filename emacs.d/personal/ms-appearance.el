@@ -52,7 +52,7 @@
 ; where mixed means highlight the
 ; whole expression only when the matching
 ; paren is not visible on screen
-(setq show-paren-style 'mixed)
+(setq show-paren-style 'parenthesis)
 ;; to customize styles for matches:
 ; (set-face-background 'show-paren-match-face "#aaaaaa")
 ; (set-face-attribute 'show-paren-match-face nil
