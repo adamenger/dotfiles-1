@@ -50,3 +50,6 @@
 (load "ms-ido-mode-buffer-completion.el")
 (load "ms-menu")
 (load "ms-mouse")
+
+;; enable projectile automatically
+(projectile-global-mode)
