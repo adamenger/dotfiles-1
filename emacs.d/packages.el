@@ -22,7 +22,7 @@
 (defvar required-packages
   '(autopair
     cyberpunk-theme
-    elnode
+    ;elnode
     flymake-cursor
     flycheck
     ghc

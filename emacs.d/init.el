@@ -45,6 +45,7 @@
 ;; Load up all our personal stuff:
 (load "ms-project.el")
 (load "ms-appearance.el")
+(load "ms-modeline.el")
 (load "ms-bindings.el")
 (load "ms-programming-languages.el")
 (load "ms-ido-mode-buffer-completion.el")
