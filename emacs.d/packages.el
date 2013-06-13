@@ -36,6 +36,7 @@
     haml-mode
     haskell-mode
     jade-mode
+    ;jedi (for this to work you need to: pip install jedi epc)
     markdown-mode
     mustache-mode
     projectile
