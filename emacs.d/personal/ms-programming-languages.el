@@ -67,7 +67,7 @@ See URL `http://pypi.python.org/pypi/pylint'."
 (autopair-global-mode)
 
 ;; display git diff icons in the fringe:
-(global-git-gutter-mode t)
+;(global-git-gutter-mode t)
 
 ;; enable basic code folding with hs (hide show mode) in
 ;; all modes:
