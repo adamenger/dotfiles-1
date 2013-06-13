@@ -8,7 +8,7 @@ import sys
 import re
 
 
-DIAMOND=u"\u25C8"
+DIAMOND = u"\u25C8"
 
 
 class Powerline:

@@ -45,11 +45,23 @@
 (require 'flycheck)
 (require 'flycheck-color-mode-line)
 
+(flycheck-declare-checker python-pyflakes
+    "A Python syntax and style checker using Pylint.
+
+See URL `http://pypi.python.org/pypi/pylint'."
+      :command '("pyflakes" source-inplace)
+        :error-patterns
+          '(("^\\(?1:.*\\):\\(?2:[0-9]+\\): Warning (W.*): \\(?4:.*\\)$" warning)
+                ("^\\(?1:.*\\):\\(?2:[0-9]+\\): Error (E.*): \\(?4:.*\\)$" error)
+                    ("^\\(?1:.*\\):\\(?2:[0-9]+\\): \\[F\\] \\(?4:.*\\)$" error))
+            :modes 'python-mode)
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (eval-after-load "flycheck"
     '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 (add-hook 'python-mode-hook 'flycheck-mode)
+
 
 ;; automatically pair braces, parens, quotes, etc:
 (autopair-global-mode)
