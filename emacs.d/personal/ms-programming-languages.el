@@ -10,6 +10,7 @@
 (load "ms-snippets")
 (load "ms-ruby")
 
+
 ;; PYFLAKES
 ;; configure hooks to run pyflakes automatically with flymake mode:
 ;; NOTE: this is super sweet
@@ -41,6 +42,13 @@
 ;; Disabling this for now and trying flycheck
 ;;(add-hook 'find-file-hook 'flymake-find-file-hook)
 
+(require 'flycheck)
+(require 'flycheck-color-mode-line)
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(eval-after-load "flycheck"
+    '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 (add-hook 'python-mode-hook 'flycheck-mode)
 
 ;; automatically pair braces, parens, quotes, etc:

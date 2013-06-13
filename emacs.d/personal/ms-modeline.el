@@ -8,66 +8,70 @@
 ;;  "  " mode-line-modes mode-line-misc-info mode-line-end-spaces)
 
 ;; Newer cleaner(?) modeline:
-(setq-default mode-line-format
-  (list
-   ;; the buffer name; the file name as a tool tip
-   ;; was this buffer modified since the last save?
-   '(:eval (when (buffer-modified-p)
-             (propertize "Modified"
-                         'face 'font-lock-warning-face
-                         'help-echo "Buffer has been modified")))
+;; (setq-default mode-line-format
+;;   (list
+;;    ;; the buffer name; the file name as a tool tip
+;;    ;; was this buffer modified since the last save?
+;;    '(:eval (when (buffer-modified-p)
+;;              (propertize "Modified"
+;;                          'face 'font-lock-warning-face
+;;                          'help-echo "Buffer has been modified")))
 
-   ;; is this buffer read-only?
-   '(:eval (when buffer-read-only
-             (propertize "Read Only"
-                         'face 'font-lock-type-face
-                         'help-echo "Buffer is read-only")))
+;;    ;; is this buffer read-only?
+;;    '(:eval (when buffer-read-only
+;;              (propertize "Read Only"
+;;                          'face 'font-lock-type-face
+;;                          'help-echo "Buffer is read-only")))
 
-   '(:eval (propertize " %b " 'face 'font-lock-keyword-face
-                       'help-echo (buffer-file-name)))
+;;    '(:eval (propertize " %b " 'face 'font-lock-keyword-face
+;;                        'help-echo (buffer-file-name)))
 
-   ;; clue folks if in we've narrowed to a region
-   "%n "
+;;    ;; clue folks if in we've narrowed to a region
+;;    "%n "
 
-   ;; display what function/class we're in:
-   (when which-func-mode
-     my-which-func-format
-     )
+;;    ;; display what function/class we're in:
+;;    (when which-func-mode
+;;      my-which-func-format
+;;      )
 
-   ;; line and column
-   "(" ;; '%02' to set to 2 chars at least; prevents flickering
-   (propertize "%02l" 'face 'font-lock-type-face) ","
-   (propertize "%02c" 'face 'font-lock-type-face)
-   ") "
+;;    ;; line and column
+;;    "(" ;; '%02' to set to 2 chars at least; prevents flickering
+;;    (propertize "%02l" 'face 'font-lock-type-face) ","
+;;    (propertize "%02c" 'face 'font-lock-type-face)
+;;    ") "
 
-   ;; relative position, size of file
-   "["
-   (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
-   "/"
-   (propertize "%I" 'face 'font-lock-constant-face) ;; size
-   "] "
+;;    ;; relative position, size of file
+;;    "["
+;;    (propertize "%p" 'face 'font-lock-constant-face) ;; % above top
+;;    "/"
+;;    (propertize "%I" 'face 'font-lock-constant-face) ;; size
+;;    "] "
 
-   ;; the current major mode for the buffer.
-   "["
-   '(:eval (propertize "%m" 'face 'font-lock-string-face
-                       'help-echo buffer-file-coding-system))
-   "] "
+;;    ;; the current major mode for the buffer.
+;;    "["
+;;    '(:eval (propertize "%m" 'face 'font-lock-string-face
+;;                        'help-echo buffer-file-coding-system))
+;;    "] "
 
-   "[" ;; insert vs overwrite mode, input-method in a tooltip
-   '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
-                       'face 'font-lock-preprocessor-face
-                       'help-echo (concat "Buffer is in "
-                                          (if overwrite-mode "overwrite" "insert") " mode")))
+;;    "[" ;; insert vs overwrite mode, input-method in a tooltip
+;;    '(:eval (propertize (if overwrite-mode "Ovr" "Ins")
+;;                        'face 'font-lock-preprocessor-face
+;;                        'help-echo (concat "Buffer is in "
+;;                                           (if overwrite-mode "overwrite" "insert") " mode")))
 
-   "] "
+;;    "] "
 
-   ;; add the time, with the date and the emacs uptime in the tooltip
-   '(:eval (propertize (format-time-string "%l:%M%p %Z")
-                       'help-echo
-                       (concat (format-time-string "%c; ")
-                               (emacs-uptime "Uptime:%hh"))))
-   " --"
-   ;; i don't want to see minor-modes; but if you want, uncomment this:
-   ;; minor-mode-alist  ;; list of minor modes
-   "%-" ;; fill with '-'
-   ))
+;;    ;; add the time, with the date and the emacs uptime in the tooltip
+;;    '(:eval (propertize (format-time-string "%l:%M%p %Z")
+;;                        'help-echo
+;;                        (concat (format-time-string "%c; ")
+;;                                (emacs-uptime "Uptime:%hh"))))
+;;    " --"
+;;    ;; i don't want to see minor-modes; but if you want, uncomment this:
+;;    ;; minor-mode-alist  ;; list of minor modes
+;;    "%-" ;; fill with '-'
+;;    ))
+
+;; Let's try out powerline:
+(require 'powerline)
+(powerline-default-theme)
