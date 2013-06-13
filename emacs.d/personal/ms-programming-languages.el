@@ -55,3 +55,11 @@
 ;    hs-minor-mode hs-minor-mode)
 ;(global-hs-minor-mode 1)
 ;; Nevermind, this global mode hack causes problems.
+
+(require 'multi-web-mode)
+(setq mweb-default-major-mode 'html-mode)
+(setq mweb-tags '((php-mode "<\\?php\\|<\\? \\|<\\?=" "\\?>")
+                  (js-mode "<script +\\(type=\"text/javascript\"\\|language=\"javascript\"\\)[^>]*>" "</script>")
+                  (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+(setq mweb-filename-extensions '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+(multi-web-global-mode 1)

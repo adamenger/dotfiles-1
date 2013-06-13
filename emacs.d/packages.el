@@ -38,6 +38,7 @@
     jade-mode
     ;jedi (for this to work you need to: pip install jedi epc)
     markdown-mode
+    multi-web-mode
     mustache-mode
     projectile
     rainbow-delimiters
