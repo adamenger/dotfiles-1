@@ -25,6 +25,7 @@
     ;elnode
     flymake-cursor
     flycheck
+    flycheck-color-mode-line
     ghc
     ghci-completion
     gist
@@ -40,6 +41,7 @@
     markdown-mode
     multi-web-mode
     mustache-mode
+    powerline
     projectile
     rainbow-delimiters
     rainbow-mode
