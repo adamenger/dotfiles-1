@@ -36,7 +36,7 @@
     haml-mode
     haskell-mode
     jade-mode
-    ;jedi (for this to work you need to: pip install jedi epc)
+    ;jedi (for this to work you need to: `pip install jedi epc`)
     markdown-mode
     multi-web-mode
     mustache-mode
@@ -44,7 +44,6 @@
     rainbow-delimiters
     rainbow-mode
     solarized-theme
-    tango-2-theme
     stylus-mode
     tabbar
     yaml-mode

@@ -141,7 +141,7 @@
 (if window-system
     (progn
       ; If gui window, load this theme
-      (load-theme 'tango)
+      (load-theme 'solarized-light)
       )
   (progn
     ; If terminal, load this theme
