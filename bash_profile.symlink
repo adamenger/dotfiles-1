@@ -58,6 +58,18 @@ fi
 # Haskell
 export PATH="$PATH:$HOME/.cabal/bin"
 
+#Threadless easy button
+function name_to_ip() {
+    ip=`/usr/local/bin/knife search node name:$1 | awk '/IP/{print $2;}'`
+}
+
+function scssh() { 
+    name_to_ip $1
+    echo "Ssh'ing to $ip";
+    /usr/bin/ssh skinnycorp@$ip;
+
+}
+
 # VirtualEnv:
 export WORKON_HOME=$HOME/.virtualenvs
 
